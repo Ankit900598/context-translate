@@ -5,6 +5,11 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const logPath = path.join(root, "setup-github-run.log");
+const GH =
+  process.env.GH_PATH ??
+  (fs.existsSync("C:\\Program Files\\GitHub CLI\\gh.exe")
+    ? "C:\\Program Files\\GitHub CLI\\gh.exe"
+    : "gh");
 const lines = [];
 
 function log(msg) {
@@ -67,7 +72,7 @@ if (porcelain) {
 }
 
 log("\n=== gh auth status ===");
-const auth = run("gh auth status");
+const auth = run(`"${GH}" auth status`);
 if (!auth.ok) {
   log("Run: gh auth login");
   fs.writeFileSync(logPath, lines.join("\n"));
@@ -77,10 +82,17 @@ if (!auth.ok) {
 const names = ["context-translate", "context-translate-app"];
 let repoUrl = null;
 for (const name of names) {
-  log(`\nTrying: gh repo create ${name} --public --source=. --remote=origin --push`);
-  const r = run(`gh repo create ${name} --public --source=. --remote=origin --push`);
+  log(
+    `\nTrying: ${GH} repo create ${name} --public --source=. --remote=origin --push`,
+  );
+  const r = run(
+    `"${GH}" repo create ${name} --public --source=. --remote=origin --push`,
+  );
   if (r.ok) {
-    const login = execSync("gh api user -q .login", { cwd: root, encoding: "utf8" }).trim();
+    const login = execSync(`"${GH}" api user -q .login`, {
+      cwd: root,
+      encoding: "utf8",
+    }).trim();
     repoUrl = `https://github.com/${login}/${name}`;
     log(`\nRepository URL: ${repoUrl}`);
     break;

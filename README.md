@@ -1,6 +1,8 @@
 # Context Translate
 
-> **Local-only:** We do not deploy, push to GitHub, publish to the Chrome Web Store, or enable paid cloud billing unless you explicitly ask. See **[LOCAL_ONLY.md](LOCAL_ONLY.md)**.
+**Repository:** https://github.com/Ankit900598/context-translate
+
+> **Local-only by default:** We do not deploy, publish to the Chrome Web Store, or enable paid cloud billing unless you explicitly ask. See **[LOCAL_ONLY.md](LOCAL_ONLY.md)**.
 
 **Chrome v1 (use today):** select text → right-click → **Translate selection**. **Demo mode** works immediately — no API key, no server.
 
