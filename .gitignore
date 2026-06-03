@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.output/
+.wxt/
+.turbo/
+*.local
+.env
+.env.*
+!.env.example
+target/
+apps/desktop/src-tauri/target/
+*.exe
+*.msi
+.DS_Store
+Thumbs.db
+*.log

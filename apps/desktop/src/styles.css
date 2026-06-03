@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #18181b;
+  color: #fafafa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#app,
+#settings-panel {
+  padding: 14px 16px;
+  width: 360px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 15px;
+  margin: 0;
+  flex: 1;
+}
+
+#close-btn {
+  border: none;
+  background: transparent;
+  color: #a1a1aa;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.translation {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.original {
+  font-size: 12px;
+  color: #71717a;
+  margin: 0 0 12px;
+}
+
+.error {
+  color: #fca5a5;
+  margin: 0 0 10px;
+}
+
+#copy-btn,
+#save-settings {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings .hint {
+  font-size: 12px;
+  color: #a1a1aa;
+  margin-bottom: 12px;
+}
+
+.settings label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.settings input,
+.settings select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #3f3f46;
+  background: #27272a;
+  color: #fafafa;
+}
+
+.ok {
+  color: #4ade80;
+  font-size: 13px;
+}

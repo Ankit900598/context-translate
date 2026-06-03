@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Context Translate — local test</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 640px;
+        margin: 40px auto;
+        padding: 0 20px;
+        line-height: 1.6;
+        color: #18181b;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .box {
+        background: #f4f4f5;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin: 20px 0;
+      }
+      .steps {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 12px;
+        padding: 14px 18px;
+        font-size: 0.95rem;
+      }
+      .sample {
+        font-size: 1.15rem;
+        user-select: text;
+      }
+      kbd {
+        background: #e4e4e7;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.85em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Context Translate test page</h1>
+    <p>Offline page for trying the extension. No API key, no internet required for this file.</p>
+
+    <div class="steps">
+      <strong>Try now</strong>
+      <ol>
+        <li>Select the highlighted sentence below (drag to highlight).</li>
+        <li>Right-click → <strong>Translate selection</strong>.</li>
+        <li>Popup should appear top-right (Demo mode).</li>
+      </ol>
+      <p>
+        If the menu is missing on this page: on <code>chrome://extensions</code> →
+        Context Translate → <strong>Details</strong> → enable
+        <strong>Allow access to file URLs</strong>, then reload this tab.
+      </p>
+    </div>
+
+    <div class="box">
+      <p class="sample">
+        Select this sentence: <strong>hello world</strong> — it should translate in
+        demo mode.
+      </p>
+      <p class="sample">
+        The quick brown fox jumps over the lazy dog. Machine learning and
+        artificial intelligence are transforming how students read online.
+      </p>
+      <p class="sample">
+        IIT Delhi is known for rigorous academics. Sometimes papers use words like
+        epistemology or stochastic that are worth a one-click translation.
+      </p>
+    </div>
+
+    <p>
+      Shortcut after install: select text anywhere → <kbd>Right click</kbd> →
+      <strong>Translate selection</strong>.
+    </p>
+  </body>
+</html>

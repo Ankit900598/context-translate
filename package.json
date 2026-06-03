@@ -1,0 +1,27 @@
+{
+  "name": "context-translate",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Translate selected text in Chrome and anywhere on Windows",
+  "scripts": {
+    "build": "corepack pnpm -r run build",
+    "dev:api": "corepack pnpm --filter @context-translate/api dev",
+    "dev:extension": "corepack pnpm --filter @context-translate/extension dev",
+    "dev:desktop": "corepack pnpm --filter @context-translate/desktop dev",
+    "build:core": "corepack pnpm --filter @context-translate/core build",
+    "build:extension": "corepack pnpm --filter @context-translate/extension build",
+    "chrome": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/chrome.ps1",
+    "chrome:test": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/chrome-test.ps1",
+    "chrome:build": "corepack pnpm --filter @context-translate/extension build",
+    "chrome:dev": "corepack pnpm --filter @context-translate/extension dev",
+    "build:api": "corepack pnpm --filter @context-translate/api build",
+    "test": "corepack pnpm --filter @context-translate/core test",
+    "typecheck:test": "corepack pnpm --filter @context-translate/core typecheck:test",
+    "verify": "node scripts/verify-all.mjs",
+    "verify:install": "corepack pnpm install && node scripts/verify-all.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

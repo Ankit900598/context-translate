@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Context Translate — Settings</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 520px;
+        margin: 32px auto;
+        padding: 0 16px;
+        color: #18181b;
+      }
+      h1 {
+        font-size: 1.35rem;
+      }
+      label {
+        display: block;
+        margin-top: 16px;
+        font-weight: 500;
+      }
+      input,
+      select {
+        width: 100%;
+        margin-top: 6px;
+        padding: 8px 10px;
+        border: 1px solid #d4d4d8;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 16px;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .hint {
+        font-size: 0.85rem;
+        color: #71717a;
+        margin-top: 4px;
+      }
+      .ok {
+        color: #16a34a;
+        margin-top: 12px;
+      }
+      .demo-banner {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 8px;
+        padding: 10px 12px;
+        margin-top: 12px;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Context Translate</h1>
+    <p>Ready to use. Select text on any page, then right-click → <strong>Translate selection</strong>.</p>
+
+    <div class="demo-banner">
+      <strong>Demo mode</strong> is on — offline sample translations, no setup, no charges.
+      Switch to Google below only if you want real translations with your own key.
+    </div>
+
+    <label for="translateMode">Translation mode</label>
+    <select id="translateMode">
+      <option value="mock">Demo (offline, recommended)</option>
+      <option value="google">Google Translate (optional)</option>
+    </select>
+
+    <div id="googleKeySection" hidden>
+      <label for="googleApiKey">Google Cloud Translation API key</label>
+      <input
+        id="googleApiKey"
+        type="password"
+        placeholder="Paste your key"
+        autocomplete="off"
+      />
+      <p class="hint">
+        Optional. Enable
+        <a href="https://cloud.google.com/translate/docs/setup" target="_blank" rel="noreferrer">Cloud Translation API</a>
+        in GCP, create a key, and paste it here. Stored only in this browser.
+      </p>
+    </div>
+
+    <label for="targetLanguage">Translate into</label>
+    <select id="targetLanguage"></select>
+
+    <label for="sourceLanguage">Source language</label>
+    <select id="sourceLanguage">
+      <option value="auto">Auto-detect</option>
+    </select>
+
+    <button id="save">Save settings</button>
+    <p id="status" class="ok" hidden>Saved!</p>
+
+    <script type="module" src="../src/options-page.ts"></script>
+  </body>
+</html>
